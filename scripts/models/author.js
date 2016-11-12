@@ -1,23 +1,19 @@
-const Author = (function createAuthor(){
-  var id = 0;
+const Author = (function(){
+  var id = 0
 
   return class Author{
     constructor(name){
-      this.id = ++id;
-      this.name = name;
-
-      store.authors = [...store.authors, this]
+      this.name = name
     }
 
-    findBooks(){
-      var books = [];
-      store.books.forEach(function(song){
-        if (book.author.id == this.id){
-          books.push(song)
-        }
-      }, this)
+    save(){
+      this.id = ++id
+      stores.push(Object.assign({},
+        {authors: [...store().authors, this], books: store().books, reviews: store().reviews}))
+    }
 
-      return books;
+    books(){
+      return store().books.find((book) => {book.author.id === this.id})
     }
   }
 })()
