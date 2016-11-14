@@ -1,23 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Badreads</title>
-  <script src="vendor/jquery-1.11.3.js"></script>
-  <!-- This is a tragic waste of space -->
-  <script src="scripts/adapters/goodreads_adapter.js"></script>
-  <script src="scripts/store.js"></script>
-  <script src="scripts/models/author.js"></script>
-  <script src="scripts/models/book.js"></script>
-  <script src="scripts/models/review.js"></script>
-  <script src="scripts/controllers/authors_controller.js"></script>
-  <script src="scripts/controllers/books_controller.js"></script>
-  <script src="scripts/controllers/reviews_controller.js"></script>
-  <script src="scripts/app.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <meta charset="UTF-8">
+ <title>Badreads</title>
+ <script src="vendor/jquery-1.11.3.js"></script>
+    <!-- This is a tragic waste of space -->
+    <script src="scripts/adapters/goodreads_adapter.js"></script>
+    <script src="scripts/store.js"></script>
+    <script src="scripts/models/author.js"></script>
+    <script src="scripts/models/book.js"></script>
+    <script src="scripts/models/review.js"></script>
+    <script src="scripts/controllers/authors_controller.js"></script>
+    <script src="scripts/controllers/books_controller.js"></script>
+    <script src="scripts/controllers/reviews_controller.js"></script>
+    <script src="scripts/app.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <style>
+#goodreads-widget {
+font-family: georgia, serif;
+padding: 18px 0;
+width:575px;
+}
+#goodreads-widget h1 {
+font-weight:normal;
+font-size: 16px;
+border-bottom: 1px solid #BBB596;
+margin-bottom: 0;
+}
+#goodreads-widget a {
+text-decoration: none;
+color:#660;
+}
+iframe{
+background-color: #ffffff;
+}
+#goodreads-widget a:hover { text-decoration: underline; }
+#goodreads-widget a:active {
+color:#660;
+}
+#gr_footer {
+width: 100%;
+border-top: 1px solid #BBB596;
+text-align: right;
+}
+#goodreads-widget .gr_branding{
+color: #382110;
+font-size: 11px;
+text-decoration: none;
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+</style>
 </head>
 <body>
 
