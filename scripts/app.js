@@ -2,10 +2,11 @@ $(function(){
 	$('#book_row').hide();
 	$('#author_form').submit(function(){
 		event.preventDefault();
+		$('#book_row').slideUp(1000);
 		goodreadsAdapter($('#author_name').val())
 		setTimeout(()=>{
 			populateBooks();
-			$('#book_row').show();
+			$('#book_row').slideDown(1000);
 		},1000)
 	})
 	$('#book_row').on('click','.show_review',function() {
