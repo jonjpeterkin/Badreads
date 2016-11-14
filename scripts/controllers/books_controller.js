@@ -7,7 +7,7 @@ function populateBooks() {
         <img src="${book.coverImg}">
         <h4>${book.title}</h4>
         <h4>${book.averageRating}</h4>
-        <button id="button_${book.id}">See Reviews</button>
+        <button class="show_review" id="${book.id}">See Reviews</button>
       </div>
     `);
   })
