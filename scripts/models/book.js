@@ -2,10 +2,11 @@ const Book = (function(){
   var id = 0
 
   return class Book{
-    constructor(name, author, averageRating){
+    constructor(title, author, averageRating){
       this.author = author
-      this.name = name
+      this.title = title
       this.averageRating = averageRating;
+      this.save()
     }
 
     save(){
