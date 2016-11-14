@@ -1,5 +1,5 @@
 function goodreadsAdapter(query){
-	getAuthor(query).done(() => {getAuthorBooks(store().authors[store().authors.length-1])})
+	return getAuthor(query).done(() => {getAuthorBooks(store().authors[store().authors.length-1])})
 }
 
 function getAuthor(name){
@@ -15,7 +15,7 @@ function getAuthor(name){
 }
 
 function getAuthorBooks(author){
-	$.ajax({
+	return $.ajax({
 		method: "GET",
 		url: `https://www.goodreads.com/author/list/${author.goodreads_id}?format=xml`,
 		data: {key: "7Rxl9lT3zDCAiDXkCY6Q"}
