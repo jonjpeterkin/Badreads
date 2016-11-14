@@ -3,11 +3,13 @@ function populateBooks() {
   store().authors[store().authors.length-1].lowestBooks().forEach((book)=>{
     $('#book_row').append(`
       <div class="col-sm-4">
-        <h3>One Of The Worst Books</h3>
-        <img src="${book.coverImg}">
-        <h4>${book.title}</h4>
-        <h4>${book.averageRating}</h4>
-        <button id="button_${book.id}">See Reviews</button>
+        <div class="w3-card-8">
+          <img class="w3-center" src="${book.coverImg}">
+          <h4 class="w3-center">${book.title}</h4>
+          <hr>
+          <h4 class="w3-center">Average Rating:  ${book.averageRating}</h4>
+          <button class="w3-btn-block w3-dark-grey">Show Reviews</button>
+        </div>
       </div>
     `);
   })
