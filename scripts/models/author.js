@@ -14,8 +14,21 @@ const Author = (function(){
         {authors: [...store().authors, this], books: store().books, reviews: store().reviews}))
     }
 
-    books(){
-      return store().books.find((book) => {book.author.id === this.id})
+    lowestBooks(){
+
+      return this.ratedBooks().sort(function (a, b) {
+        if (a.averageRating > b.averageRating) {
+          return 1;
+        }
+        if (a.averageRating < b.averageRating) {
+          return -1;
+        }
+        return 0;
+      }).slice(0,3)
+    }
+
+    ratedBooks(){
+      return store().books.filter((book) => {return ((book.author.id === this.id) && (book.averageRating >= 1))})
     }
   }
 })()
