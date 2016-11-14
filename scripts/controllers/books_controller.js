@@ -8,7 +8,7 @@ function populateBooks() {
           <h4 class="w3-center">${book.title}</h4>
           <hr>
           <h4 class="w3-center">Average Rating:  ${book.averageRating}</h4>
-          <button class="w3-btn-block w3-dark-grey">Show Reviews</button>
+          <button id=${book.id} class="w3-btn-block w3-dark-grey show_review">Show Reviews</button>
         </div>
       </div>
     `);
