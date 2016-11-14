@@ -27,7 +27,7 @@ function getAuthorBooks(author){
 			let goodreads_id = $(book).find("id").text()
 			let newBook = new Book (title, bookAuthor, isbn, goodreads_id)
 			newBook.averageRating = Number.parseFloat($(book).find("average_rating")[0].innerHTML)
-			newBook.coverImg = $(book).find("image_url")[0].innerHTML;
+			newBook.coverImg = $(book).find("image_url")[0].innerHTML
 		})
 	 })
 }

@@ -3,10 +3,16 @@ const Review = (function createReview(){
 
   return class {
     constructor(isbn, goodreads_id, book_title){
-      this.id = ++id;
       this.isbn = isbn;
       this.goodreads_id = goodreads_id;
       this.book_title = book_title;
+      this.save()
+    }
+
+    save(){
+      this.id = ++id
+      stores.push(Object.assign({},
+        {authors: store().authors, books: store().books, reviews: [...store().reviews, this]}))
     }
 
     getWidget(){
