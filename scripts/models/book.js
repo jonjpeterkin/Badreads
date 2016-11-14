@@ -13,8 +13,7 @@ const Book = (function(){
     save(){
       this.id = ++id
       stores.push(Object.assign({},
-        {authors: store().authors, books: [...store().books, this], reviews: store().reviews}
-      ))
+        {authors: store().authors, books: [...store().books, this], reviews: store().reviews}))
     }
   }
 })()
