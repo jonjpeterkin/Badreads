@@ -1,9 +1,9 @@
 function goodreadsAdapter(query){
-
+	getAuthor(query).done(() => {getAuthorBooks(store().authors[store().authors.length-1])})
 }
 
 function getAuthor(name){
-	$.ajax({
+	return $.ajax({
 		method: "GET",
 		url: `https://www.goodreads.com/api/author_url/${name}`,
 		data: {key: "CRW3QW5h0xq6eR0juk2g"}
@@ -18,9 +18,15 @@ function getAuthorBooks(author){
 	$.ajax({
 		method: "GET",
 		url: `https://www.goodreads.com/author/list/${author.goodreads_id}?format=xml`,
-		data: {key: "CRW3QW5h0xq6eR0juk2g"}
+		data: {key: "7Rxl9lT3zDCAiDXkCY6Q"}
 	}).done((data) => {
-		debugger
-		books = $(data)
+		$(data).find("book").each((i, book) => {
+			let title = $(book).find("title").text()
+			let bookAuthor = author
+			let isbn = $(book).find("isbn").text()
+			let goodreads_id = $(book).find("id").text()
+			let newBook = new Book (title, bookAuthor, isbn, goodreads_id)
+			newBook.averageRating = $(book).find("average_rating")[0].innerHTML
+		})
 	 })
 }

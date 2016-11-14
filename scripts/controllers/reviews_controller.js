@@ -5,7 +5,7 @@ function bindReviewButtons() {
   })
 }
 
-function showReviews(frame) {}
+function showReviews(frame) {
   frame.hide();
   frame.empty();
   frame.append(rev.getWidget());
