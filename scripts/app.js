@@ -8,7 +8,7 @@ $(function(){
 		setTimeout(()=>{
 			populateBooks();
 			$('#book_row').slideDown(1000);
-		},1000)
+		},1100)
 	})
 
 	$('#book_row').on('click','.show_review',function() {
