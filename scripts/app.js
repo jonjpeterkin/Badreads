@@ -2,6 +2,7 @@ $(function(){
 	$('#book_row').hide()
 	$('#author_form').submit(function(){
 		event.preventDefault();
+		$('#review_row').empty();
 		$('#book_row').slideUp(1000);
 		goodreadsAdapter($('#author_name').val())
 		setTimeout(()=>{
